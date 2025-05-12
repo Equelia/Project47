@@ -24,14 +24,14 @@ namespace Project47
 
 		protected virtual void MovementProcess(float deltaTime)
 		{
-			var moveSensitivity = inputMoveSensitivity * deltaTime;
+			var moveSensitivity = inputMoveSensitivity;
 
 			var h = Mathf.Clamp(Input.GetAxis(inputMoveHorizontal) * moveSensitivity, -1.0f, 1.0f);
 			var v = Mathf.Clamp(Input.GetAxis(inputMoveVertical) * moveSensitivity, -1.0f, 1.0f);
 
 			if (!Mathf.Approximately(h, 0.0f) || !Mathf.Approximately(v, 0.0f))
 			{
-				character.Move(orientation, h, v, Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
+				character.Move(orientation, h, v, Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift), deltaTime);
 				return;
 			}
 
