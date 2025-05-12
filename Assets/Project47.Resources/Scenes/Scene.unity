@@ -529,6 +529,7 @@ GameObject:
   - component: {fileID: 785668578}
   - component: {fileID: 785668577}
   - component: {fileID: 785668576}
+  - component: {fileID: 785668579}
   m_Layer: 0
   m_Name: Placement
   m_TagString: Untagged
@@ -624,6 +625,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785668574}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &785668579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785668574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0d88826e9605d4bbceae048841653f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &895466153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,6 +1286,37 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4122421119253545377, guid: 3449519cf95b9614d802c295145b7cfb, type: 3}
   m_PrefabInstance: {fileID: 1236250385}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1463079368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1463079369}
+  m_Layer: 6
+  m_Name: Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1463079369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463079368}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1672313703}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1672313702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1349,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1463079369}
   - {fileID: 1236250386}
   m_Father: {fileID: 914539824}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1323,6 +1368,7 @@ MonoBehaviour:
   characterAnimator: {fileID: 1236250391}
   characterTransform: {fileID: 1672313703}
   characterRigibody: {fileID: 1672313705}
+  rootAnchor: {fileID: 1463079369}
   characterSettings: {fileID: 11400000, guid: 291d5abe770ed1644956987e4aa3081c, type: 2}
 --- !u!54 &1672313705
 Rigidbody:

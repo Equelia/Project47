@@ -38,6 +38,15 @@ namespace Project47
 			character.Idle(orientation);
 		}
 
+		protected virtual void JumpProcess()
+		{
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				if (character.IsGrounded())
+					character.Jump();
+			}
+		}
+
 		protected virtual void RotationProcess(float deltaTime)
 		{
 			var mouseSensitivity = inputMouseSensitivity * deltaTime;
@@ -52,6 +61,7 @@ namespace Project47
 		protected virtual void Update()
 		{
 			MovementProcess(Time.deltaTime);
+			JumpProcess();
 			RotationProcess(Time.deltaTime);
 		}
 	}

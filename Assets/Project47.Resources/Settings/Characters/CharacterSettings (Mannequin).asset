@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   movementSpeedShift: 4
+  jumpForce: 4
