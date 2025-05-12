@@ -14,6 +14,11 @@ namespace Project47
 		[NonSerialized()] [HideInInspector()] public Vector3 followPositionOffset;
 		[NonSerialized()] [HideInInspector()] public Vector3 followRotationOffset;
 
+		public virtual void Rotate(float dx, float dy)
+		{
+			followRotationOffset += new Vector3(-dy, dx, 0.0f);
+		}
+
 		protected override void Awake()
 		{
 			followPositionOffset = transform.position - followPositionTarget.position;
@@ -24,7 +29,7 @@ namespace Project47
 		protected virtual void LateUpdate()
 		{
 			transform.position = followPositionOffset + followPositionTarget.position;
-			transform.eulerAngles = followRotationOffset + followRotationTarget.eulerAngles;
+			transform.eulerAngles = followRotationOffset;
 		}
 	}
 }
